@@ -12,8 +12,6 @@ function App() {
     const [previousImageUrl, setPreviousImageUrl] = useState("");
     const [previousRecognizedText, setPreviousRecognizedText] = useState("");
 
-
-    
     const handleImageChange = (event) => {
         setImageUrl(URL.createObjectURL(event.target.files[0]));
         setRecognizedText("");
@@ -28,7 +26,7 @@ function App() {
         setIsLoading(false);
         setIsRecognizing(false);
         setIsRecognized(true);
-    }
+    };
 
     const handleReset = () => {
         setPreviousImageUrl(imageUrl);
@@ -37,17 +35,21 @@ function App() {
         setRecognizedText("");
         setIsLoading(false);
         setIsRecognized(false);
-    }
+    };
 
     const handleBack = () => {
         setImageUrl(previousImageUrl);
         setRecognizedText(previousRecognizedText);
-    }
+        setPreviousImageUrl("");
+        setPreviousRecognizedText("");
+    };
 
     return (
         <div className="App">
             <header className="App-header">
-                <h1 className={isRecognizing ? "image hidden" : "image"}>Распознавание текста на фото</h1>
+                <h1 className={isRecognizing ? "image hidden" : "image"}>
+                    Распознавание текста на фото
+                </h1>
                 <div className="container">
                     {imageUrl ? (
                         <img
@@ -58,11 +60,7 @@ function App() {
                     ) : (
                         <div className="uploadText">
                             <p>Загрузите фото, я распознаю и верну текст</p>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                onChange={handleImageChange}
-                            />
+                            <input type="file" accept="image/*" onChange={handleImageChange} />
                         </div>
                     )}
                     {isLoading && (
@@ -77,14 +75,11 @@ function App() {
                         </div>
                     )}
                     {imageUrl && !recognizedText && !isLoading && (
-                        <button
-                            onClick={handleRecognition}
-                            className={isRecognizing ? "hidden" : ""}
-                        >
+                        <button onClick={handleRecognition} className={isRecognizing ? "hidden" : ""}>
                             Распознать текст
                         </button>
                     )}
-                    {previousImageUrl && previousRecognizedText && (
+                    {previousImageUrl && previousRecognizedText && !isRecognizing && (
                         <button onClick={handleBack}>Назад</button>
                     )}
                 </div>
