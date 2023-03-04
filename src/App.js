@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Tesseract from "tesseract.js";
 import { BallTriangle } from "react-loader-spinner";
 import "./App.css";
@@ -11,6 +11,7 @@ function App() {
     const [isRecognized, setIsRecognized] = useState(false);
     const [previousImageUrl, setPreviousImageUrl] = useState("");
     const [previousRecognizedText, setPreviousRecognizedText] = useState("");
+    const fileInputRef = useRef(null);
 
     const handleImageChange = (event) => {
         setImageUrl(URL.createObjectURL(event.target.files[0]));
@@ -44,6 +45,10 @@ function App() {
         setPreviousRecognizedText("");
     };
 
+    const handleFileInputClick = () => {
+        fileInputRef.current.click();
+    };
+
     return (
         <div className="App">
             <header className="App-header">
@@ -60,7 +65,14 @@ function App() {
                     ) : (
                         <div className="uploadText">
                             <p>Загрузите фото, я распознаю и верну текст</p>
-                            <input type="file" accept="image/*" onChange={handleImageChange} />
+                            <button onClick={handleFileInputClick}>Выбрать файл</button>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                                ref={fileInputRef}
+                                className="hidden"
+                            />
                         </div>
                     )}
                     {isLoading && (
@@ -85,6 +97,8 @@ function App() {
                 </div>
             </header>
         </div>
+
+
     );
 }
 
