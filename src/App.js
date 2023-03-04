@@ -3,9 +3,6 @@ import Tesseract from "tesseract.js";
 import { BallTriangle } from "react-loader-spinner";
 import "./App.css";
 
-
-
-
 function App() {
     const [imageUrl, setImageUrl] = useState("");
     const [isLoading, setIsLoading] = useState(false);
