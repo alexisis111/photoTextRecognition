@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Tesseract from "tesseract.js";
 import { BallTriangle } from "react-loader-spinner";
 import "./App.css";
+import SpeechRecognitionComponent from "./speech";
 
 function App() {
     const [imageUrl, setImageUrl] = useState("");
@@ -52,6 +53,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <SpeechRecognitionComponent />
                 <h1 className={isRecognizing ? "image hidden" : "image"}>
                     Распознавание текста на фото
                 </h1>
@@ -81,21 +83,26 @@ function App() {
                         </div>
                     )}
                     {recognizedText && (
-                        <div className={isRecognizing ? "recognizedText hidden" : "recognizedText"}>
+                        <div
+                            className={isRecognizing ? "recognizedText hidden" : "recognizedText"}
+                        >
                             <p>{recognizedText}</p>
                             <button onClick={handleReset}>Загрузить новый файл</button>
                         </div>
                     )}
                     {imageUrl && !recognizedText && !isLoading && (
-                        <button onClick={handleRecognition} className={isRecognizing ? "hidden" : ""}>
+                        <button onClick={handleRecognition}>
                             Распознать текст
                         </button>
                     )}
-                    {previousImageUrl && previousRecognizedText && !isRecognizing && (
-                        <button onClick={handleBack}>Назад</button>
-                    )}
+                    {previousImageUrl &&
+                        previousRecognizedText &&
+                        !isRecognizing && (
+                            <button onClick={handleBack}>Назад</button>
+                        )}
                 </div>
             </header>
+
         </div>
 
 
