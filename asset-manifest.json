@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/photoTextRecognition/static/css/main.e9d2354b.css",
-    "main.js": "/photoTextRecognition/static/js/main.bc26f33f.js",
+    "main.js": "/photoTextRecognition/static/js/main.756a2f5e.js",
     "index.html": "/photoTextRecognition/index.html",
     "main.e9d2354b.css.map": "/photoTextRecognition/static/css/main.e9d2354b.css.map",
-    "main.bc26f33f.js.map": "/photoTextRecognition/static/js/main.bc26f33f.js.map"
+    "main.756a2f5e.js.map": "/photoTextRecognition/static/js/main.756a2f5e.js.map"
   },
   "entrypoints": [
     "static/css/main.e9d2354b.css",
-    "static/js/main.bc26f33f.js"
+    "static/js/main.756a2f5e.js"
   ]
 }
