@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/photoTextRecognition/static/css/main.e9d2354b.css",
-    "main.js": "/photoTextRecognition/static/js/main.756a2f5e.js",
+    "main.css": "/photoTextRecognition/static/css/main.d4cc1979.css",
+    "main.js": "/photoTextRecognition/static/js/main.c53e4375.js",
     "index.html": "/photoTextRecognition/index.html",
-    "main.e9d2354b.css.map": "/photoTextRecognition/static/css/main.e9d2354b.css.map",
-    "main.756a2f5e.js.map": "/photoTextRecognition/static/js/main.756a2f5e.js.map"
+    "main.d4cc1979.css.map": "/photoTextRecognition/static/css/main.d4cc1979.css.map",
+    "main.c53e4375.js.map": "/photoTextRecognition/static/js/main.c53e4375.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9d2354b.css",
-    "static/js/main.756a2f5e.js"
+    "static/css/main.d4cc1979.css",
+    "static/js/main.c53e4375.js"
   ]
 }
